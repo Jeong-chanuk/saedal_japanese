@@ -215,7 +215,7 @@ export const classMaterials: {
     id: 'pokemon-1',
     title: '포켓몬 캐릭터 학습',
     lesson: '캐릭터로 배우는 문법',
-    description: '좋아하는 포켓몬 캐릭터의 별칭 유래를 일본어로 설명.',
+    description: '좋아하는 포켓몬 캐릭터의 별칭 유래를 일본어로 설명한 자료입니다.',
     image: '/class/Metamong.png',
   },
   {
@@ -229,7 +229,7 @@ export const classMaterials: {
     id: 'highlight-1',
     title: '여행지에서 먹은 음식',
     lesson: '음식의 맛과 재료 표현해 보기',
-    description: '여행지에서 먹은 가장 맛있었던 음식 소개.',
+    description: '여행지에서 먹은 가장 맛있었던 음식을 소개한 자료입니다.',
     image: '/class/sandwich.png',
   },
   {
