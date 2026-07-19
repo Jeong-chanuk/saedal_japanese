@@ -166,8 +166,9 @@ export function AudienceExperience() {
 
             <p className="mx-auto mt-8 flex max-w-2xl items-center justify-center gap-2 rounded-2xl border border-dashed border-primary/40 bg-primary/5 px-5 py-4 text-center text-sm font-medium text-foreground">
               <MapPin className="size-4 shrink-0 text-primary" />
-              <span className="whitespace-pre-line"></span>
+              <span className="whitespace-pre-line">
               {curriculumNote}
+              </span>
             </p>
           </div>
         </section>
