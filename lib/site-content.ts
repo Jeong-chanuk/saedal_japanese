@@ -19,7 +19,7 @@ export const nav = [
 ]
 
 export const hero = {
-  badge: '일본 현지 14년 · 국내 6년 강의 경력',
+  badge: '일본 현지 14년 · 국내 6년간 1:1 전문맞춤수업 경력',
   title: '새달일본어와 함께\n유창한 일본어,\n지금 시작하세요',
   subtitle:
     '한국인이 어려워하는 부분을 정확히 아는 강사가, Zoom으로 친구처럼 편하게 가르칩니다.',
@@ -66,7 +66,7 @@ export const instructor = {
   role: '새달일본어 강사',
   photo: '/images/instructor-youngji.jpg',
   headline:
-    '일본 현지 14년 거주, 6년간의 강의 경력. 한국인이 어려워하는 부분을 정확히 알고, 친구처럼 편하게 가르칩니다.',
+    '일본 현지 14년 거주, 6년간의 1:1 전문맞춤수업 경력. 한국인이 어려워하는 부분을 정확히 알고, 친구처럼 편하게 가르칩니다.',
   points: [
     '한번 익히면 평생 써먹는 언어 습관 들이기',
     '왕초보부터 비즈니스까지 6년간 70명 이상 지도',
@@ -77,7 +77,7 @@ export const instructor = {
 
 export const stats: { value: string; label: string }[] = [
   { value: '92%', label: '재수강률' },
-  { value: '70+', label: '누적 수강생' },
+  { value: '70+', label: '1:1수업 누적 수강생' },
   { value: '5/5', label: '수강생 만족도' },
 ]
 
@@ -194,7 +194,7 @@ export const curriculumByAudience: Record<
   ],
 }
 
-export const curriculumNote = '원어민 회화 세션은 별도로 신청할 수 있어요. 배운 표현을 실제 대화로 굳혀 드립니다 (세부 커리큘럼은 개인별로 맞춤 진행됩니다).'
+export const curriculumNote = '원어민 회화 세션은 별도로 신청할 수 있어요. 배운 표현을 실제 대화로 굳혀 드립니다 \n(세부 커리큘럼은 개인별로 맞춤 진행됩니다).'
 
 // 학생 실습자료 갤러리
 export const classMaterials: {
@@ -206,7 +206,7 @@ export const classMaterials: {
 }[] = [
   {
     id: 'sticker-1',
-    title: '일본어 스티커 팔레트',
+    title: '카톡 이모티콘 설명',
     lesson: '기초 어휘 및 이모지 표현',
     description: '본인이 자주 사용하는 이모지와 스티커를 정리해 발표한 자료입니다.',
     image: '/class/imoji.png',
