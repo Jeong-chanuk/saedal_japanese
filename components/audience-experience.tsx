@@ -47,8 +47,8 @@ export function AudienceExperience() {
                   aria-controls="audience-panel"
                   onClick={() => setSelected(a.id)}
                   className={`group flex flex-col items-start rounded-3xl border-2 p-6 text-left transition-all ${active
-                      ? 'border-primary bg-card shadow-lg -translate-y-1'
-                      : 'border-border bg-card/60 hover:border-primary/40 hover:bg-card hover:-translate-y-0.5'
+                    ? 'border-primary bg-card shadow-lg -translate-y-1'
+                    : 'border-border bg-card/60 hover:border-primary/40 hover:bg-card hover:-translate-y-0.5'
                     }`}
                 >
                   <span
@@ -164,12 +164,14 @@ export function AudienceExperience() {
               ))}
             </ol>
 
-            <p className="mx-auto mt-8 flex max-w-2xl items-center justify-center gap-2 rounded-2xl border border-dashed border-primary/40 bg-primary/5 px-5 py-4 text-center text-sm font-medium text-foreground">
-              <MapPin className="size-4 shrink-0 text-primary" />
-              <span className="whitespace-pre-line">
-              {curriculumNote}
+            <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-dashed border-primary/40 bg-primary/5 px-5 py-4 text-center text-sm font-medium text-foreground">
+              <span className="inline-flex items-start gap-2 text-left">
+                <MapPin className="mt-0.5 size-4 shrink-0 text-primary" />
+                <span className="whitespace-pre-line leading-relaxed">
+                  {curriculumNote}
+                </span>
               </span>
-            </p>
+            </div>
           </div>
         </section>
       </div>
