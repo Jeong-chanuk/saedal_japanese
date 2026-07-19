@@ -46,16 +46,14 @@ export function AudienceExperience() {
                   aria-selected={active}
                   aria-controls="audience-panel"
                   onClick={() => setSelected(a.id)}
-                  className={`group flex flex-col items-start rounded-3xl border-2 p-6 text-left transition-all ${
-                    active
+                  className={`group flex flex-col items-start rounded-3xl border-2 p-6 text-left transition-all ${active
                       ? 'border-primary bg-card shadow-lg -translate-y-1'
                       : 'border-border bg-card/60 hover:border-primary/40 hover:bg-card hover:-translate-y-0.5'
-                  }`}
+                    }`}
                 >
                   <span
-                    className={`flex size-12 items-center justify-center rounded-2xl text-2xl transition-colors ${
-                      active ? 'bg-primary/15' : 'bg-secondary'
-                    }`}
+                    className={`flex size-12 items-center justify-center rounded-2xl text-2xl transition-colors ${active ? 'bg-primary/15' : 'bg-secondary'
+                      }`}
                     aria-hidden="true"
                   >
                     {a.emoji}
@@ -168,6 +166,7 @@ export function AudienceExperience() {
 
             <p className="mx-auto mt-8 flex max-w-2xl items-center justify-center gap-2 rounded-2xl border border-dashed border-primary/40 bg-primary/5 px-5 py-4 text-center text-sm font-medium text-foreground">
               <MapPin className="size-4 shrink-0 text-primary" />
+              <span className="whitespace-pre-line"></span>
               {curriculumNote}
             </p>
           </div>
