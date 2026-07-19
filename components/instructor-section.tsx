@@ -14,7 +14,7 @@ export function InstructorSection() {
                 alt={`${instructor.name} 강사 프로필 사진`}
                 fill
                 sizes="280px"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             <span className="absolute bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-primary px-4 py-1.5 text-sm font-bold text-primary-foreground shadow-md">
