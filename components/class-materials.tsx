@@ -14,13 +14,13 @@ export function ClassMaterials() {
         <div className="text-center">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-card px-4 py-1.5 text-sm font-semibold text-primary shadow-sm">
             <BookOpen className="size-4" />
-            학생 실습 자료
+            학생 발표 자료
           </span>
           <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl">
-            실제 수업에서 배웠던 실습자료들
+            실제 수업 발표자료들
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-pretty text-muted-foreground">
-            새달일본어 학생들의 창의적인 실습 과정들을 살펴보세요. 재미있는 주제로 자연스럽게 일본어를 습득합니다.
+            새달일본어 학생들의 창의적인 발표 과정들을 살펴보세요. 재미있는 주제로 자연스럽게 일본어를 습득합니다.
           </p>
         </div>
 
@@ -79,17 +79,6 @@ export function ClassMaterials() {
                 <p className="text-base leading-relaxed text-muted-foreground">
                   {selectedMaterial.description}
                 </p>
-
-                <div className="bg-secondary/40 rounded-xl p-4 border border-border">
-                  <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-2">
-                    ✓ 학습 포인트
-                  </p>
-                  <ul className="space-y-2 text-sm text-foreground">
-                    <li>• {selectedMaterial.lesson}를 중심으로 진행됩니다</li>
-                    <li>• 실전 상황에 적용할 수 있는 표현들을 배웁니다</li>
-                    <li>• 창의적 사고와 일본어를 함께 개발합니다</li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>

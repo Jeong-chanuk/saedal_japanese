@@ -112,7 +112,7 @@ export const storiesByAudience: Record<
     },
     {
       name: '정OO · 30대 · 영업직',
-      before: '단어 몇 개 주워듣고 선배 옆에서 보조만 하던 신입사원',
+      before: '단어 몇 개 주워듣고 보조만 하던 신입사원',
       after: '이제는 일본 거래처 단독 출장도 맡는 실무 담당자',
       period: '8개월',
       photo: '/images/daruma.png',
@@ -129,7 +129,7 @@ export const storiesByAudience: Record<
     {
       name: '한OO · 20대 · 여행 러버',
       before: '메뉴판 앞에서 늘 손가락으로만 주문',
-      after: '마스터와 가벼운 대화를 즐기는 여행자로 변신',
+      after: '이자카야 마스터와 가벼운 대화를 즐기는 여행자로 변신',
       period: '6개월',
       photo: '/images/shiba.png',
     },
