@@ -4,8 +4,8 @@ import { StatsSection } from '@/components/stats-section'
 import { InstructorSection } from '@/components/instructor-section'
 import { AudienceExperience } from '@/components/audience-experience'
 import { HowItWorks } from '@/components/how-it-works'
+import { ClassPreview } from '@/components/class-preview'
 import { ClassMaterials } from '@/components/class-materials'
-import { LearningReport } from '@/components/learning-report'
 import { TrialSection } from '@/components/trial-section'
 import { FaqSection } from '@/components/faq-section'
 import { SiteFooter } from '@/components/site-footer'
@@ -20,8 +20,8 @@ export default function Page() {
         <InstructorSection />
         <AudienceExperience />
         <HowItWorks />
+        <ClassPreview />
         <ClassMaterials />
-        <LearningReport />
         <TrialSection />
         <FaqSection />
       </main>

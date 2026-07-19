@@ -255,6 +255,55 @@ export const classMaterials: {
   },
 ]
 
+export const classPreview = {
+  title: '실제 수업자료 미리보기',
+  subtitle: '기초 말하기부터 프리토킹, 뉴스 토론까지\n레벨에 맞춰 사용하는 새달일본어의 실제 수업자료입니다.',
+  items: [
+    {
+      id: 'class-1',
+      number: '01',
+      title: '기초 문형 말하기',
+      image: '/class-text/class 1.png',
+    },
+    {
+      id: 'class-2',
+      number: '02',
+      title: 'んです 말하기 연습',
+      image: '/class-text/class 2.png',
+    },
+    {
+      id: 'class-3',
+      number: '03',
+      title: '친구 소개 프리토킹',
+      image: '/class-text/class 3.png',
+    },
+    {
+      id: 'class-4',
+      number: '04',
+      title: '일본 문화·여행 주제',
+      image: '/class-text/class 4.png',
+    },
+    {
+      id: 'class-5',
+      number: '05',
+      title: '가치관 토론',
+      image: '/class-text/class 5.png',
+    },
+    {
+      id: 'class-6',
+      number: '06',
+      title: '사회 이슈 독해',
+      image: '/class-text/class 6.png',
+    },
+    {
+      id: 'class-7',
+      number: '07',
+      title: '뉴스 시사 토론',
+      image: '/class-text/class 7.png',
+    },
+  ],
+}
+
 export const learningReport = {
   title: '분기별 학습성과 리포트',
   subtitle: '수강생의 객관적인 성장을 한눈에 확인할 수 있습니다',
