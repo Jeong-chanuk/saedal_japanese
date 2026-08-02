@@ -24,33 +24,58 @@ export function ClassPreview() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-3">
+        <div className="mt-12 lg:grid lg:grid-cols-3 lg:gap-8">
           {/* 좌측: 수업자료 목록 */}
-          <div className="space-y-3">
-            {classPreview.items.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => setSelectedClass(item)}
-                className={`w-full rounded-2xl border-2 p-4 text-left transition-all ${
-                  selectedClass.id === item.id
-                    ? 'border-primary bg-primary/5'
-                    : 'border-border bg-card hover:border-primary/50'
-                }`}
-              >
-                <div className="flex items-start gap-3">
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 font-semibold text-primary text-sm">
-                    {item.number}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-foreground text-sm line-clamp-2">{item.title}</h3>
-                  </div>
+          <div className="space-y-3 lg:col-span-1">
+            {classPreview.items.map((item) => {
+              const active = selectedClass.id === item.id
+              return (
+                <div key={item.id} className="space-y-3">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedClass(item)}
+                    className={`w-full rounded-2xl border-2 p-4 text-left transition-all ${
+                      active
+                        ? 'border-primary bg-primary/5'
+                        : 'border-border bg-card hover:border-primary/50'
+                    }`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 font-semibold text-primary text-sm">
+                        {item.number}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-semibold text-foreground text-sm line-clamp-2">{item.title}</h3>
+                      </div>
+                    </div>
+                  </button>
+
+                  {active && (
+                    <div className="rounded-3xl border border-border bg-card p-4 shadow-sm overflow-hidden lg:hidden">
+                      <div className="relative mb-4 w-full overflow-hidden rounded-2xl bg-secondary/40">
+                        <div className="aspect-video relative w-full">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            fill
+                            className="object-cover"
+                            priority
+                          />
+                        </div>
+                      </div>
+                      <span className="inline-block text-3xl font-bold text-primary mb-2">
+                        {item.number}
+                      </span>
+                      <h3 className="font-display text-xl text-foreground">{item.title}</h3>
+                    </div>
+                  )}
                 </div>
-              </button>
-            ))}
+              )
+            })}
           </div>
 
           {/* 우측: 선택된 자료 미리보기 */}
-          <div className="lg:col-span-2">
+          <div className="hidden lg:col-span-2 lg:block">
             <div className="rounded-3xl border border-border bg-card p-6 shadow-sm overflow-hidden">
               {/* 이미지 영역 */}
               <div className="relative w-full bg-secondary/40 rounded-2xl overflow-hidden mb-6">

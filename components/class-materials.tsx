@@ -24,34 +24,63 @@ export function ClassMaterials() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-3">
+        <div className="mt-12 lg:grid lg:grid-cols-3 lg:gap-8">
           {/* 좌측: 실습자료 목록 */}
-          <div className="space-y-3">
-            {classMaterials.map((material) => (
-              <button
-                key={material.id}
-                onClick={() => setSelectedMaterial(material)}
-                className={`w-full rounded-2xl border-2 p-4 text-left transition-all ${
-                  selectedMaterial.id === material.id
-                    ? 'border-primary bg-primary/5'
-                    : 'border-border bg-card hover:border-primary/50'
-                }`}
-              >
-                <div className="flex items-start gap-3">
-                  <div className="mt-1 flex size-6 items-center justify-center rounded-lg bg-primary/10 text-primary flex-shrink-0">
-                    <ImageIcon className="size-4" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-foreground text-sm line-clamp-2">{material.title}</h3>
-                    <p className="text-xs text-muted-foreground mt-1 line-clamp-1">{material.lesson}</p>
-                  </div>
+          <div className="space-y-3 lg:col-span-1">
+            {classMaterials.map((material) => {
+              const active = selectedMaterial.id === material.id
+              return (
+                <div key={material.id} className="space-y-3">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedMaterial(material)}
+                    className={`w-full rounded-2xl border-2 p-4 text-left transition-all ${
+                      active
+                        ? 'border-primary bg-primary/5'
+                        : 'border-border bg-card hover:border-primary/50'
+                    }`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="mt-1 flex size-6 items-center justify-center rounded-lg bg-primary/10 text-primary flex-shrink-0">
+                        <ImageIcon className="size-4" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-semibold text-foreground text-sm line-clamp-2">{material.title}</h3>
+                        <p className="text-xs text-muted-foreground mt-1 line-clamp-1">{material.lesson}</p>
+                      </div>
+                    </div>
+                  </button>
+
+                  {active && (
+                    <div className="rounded-3xl border border-border bg-card p-4 shadow-sm overflow-hidden lg:hidden">
+                      <div className="relative mb-4 w-full overflow-hidden rounded-2xl bg-secondary/40">
+                        <div className="aspect-video relative w-full">
+                          <Image
+                            src={material.image}
+                            alt={material.title}
+                            fill
+                            className="object-cover"
+                            priority
+                          />
+                        </div>
+                      </div>
+                      <h3 className="font-display text-xl text-foreground">{material.title}</h3>
+                      <div className="mt-2 inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+                        <BookOpen className="size-4" />
+                        {material.lesson}
+                      </div>
+                      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                        {material.description}
+                      </p>
+                    </div>
+                  )}
                 </div>
-              </button>
-            ))}
+              )
+            })}
           </div>
 
           {/* 우측: 선택된 자료 상세 */}
-          <div className="lg:col-span-2">
+          <div className="hidden lg:col-span-2 lg:block">
             <div className="rounded-3xl border border-border bg-card p-6 shadow-sm overflow-hidden">
               {/* 이미지 영역 */}
               <div className="relative w-full bg-secondary/40 rounded-2xl overflow-hidden mb-6">

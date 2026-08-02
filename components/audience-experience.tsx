@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { ArrowRight, Clock, MapPin } from 'lucide-react'
 import {
@@ -13,9 +13,33 @@ import {
 
 export function AudienceExperience() {
   const [selected, setSelected] = useState<AudienceId>('beginner')
+  const [isMobile, setIsMobile] = useState(false)
+  const [showOptions, setShowOptions] = useState(false)
   const stories = storiesByAudience[selected]
   const roadmap = curriculumByAudience[selected]
   const current = audiences.find((a) => a.id === selected)!
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 767px)')
+    const update = () => {
+      setIsMobile(mediaQuery.matches)
+      if (!mediaQuery.matches) {
+        setShowOptions(false)
+      }
+    }
+
+    update()
+    mediaQuery.addEventListener('change', update)
+
+    return () => mediaQuery.removeEventListener('change', update)
+  }, [])
+
+  const handleSelect = (id: AudienceId) => {
+    setSelected(id)
+    if (isMobile) {
+      setShowOptions(false)
+    }
+  }
 
   return (
     <>
@@ -31,42 +55,107 @@ export function AudienceExperience() {
             </p>
           </div>
 
-          <div
-            role="tablist"
-            aria-label="수강 유형 선택"
-            className="mt-10 grid gap-4 sm:grid-cols-3"
-          >
-            {audiences.map((a) => {
-              const active = a.id === selected
-              return (
+          {isMobile ? (
+            <div className="mt-8 flex flex-col gap-3">
+              {!showOptions ? (
                 <button
-                  key={a.id}
-                  role="tab"
-                  id={`tab-${a.id}`}
-                  aria-selected={active}
-                  aria-controls="audience-panel"
-                  onClick={() => setSelected(a.id)}
-                  className={`group flex flex-col items-start rounded-3xl border-2 p-6 text-left transition-all ${active
-                    ? 'border-primary bg-card shadow-lg -translate-y-1'
-                    : 'border-border bg-card/60 hover:border-primary/40 hover:bg-card hover:-translate-y-0.5'
-                    }`}
+                  type="button"
+                  onClick={() => setShowOptions(true)}
+                  className="w-full rounded-[1.75rem] border-2 border-primary bg-card p-6 text-left shadow-lg"
                 >
-                  <span
-                    className={`flex size-12 items-center justify-center rounded-2xl text-2xl transition-colors ${active ? 'bg-primary/15' : 'bg-secondary'
-                      }`}
-                    aria-hidden="true"
-                  >
-                    {a.emoji}
-                  </span>
-                  <span className="mt-4 flex items-baseline gap-2">
-                    <span className="font-display text-xl text-foreground">{a.label}</span>
-                    <span className="text-xs font-medium text-muted-foreground">{a.labelEn}</span>
-                  </span>
-                  <span className="mt-2 text-sm leading-relaxed text-muted-foreground">{a.desc}</span>
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <span className="flex size-12 items-center justify-center rounded-2xl bg-primary/15 text-2xl" aria-hidden="true">
+                        {current.emoji}
+                      </span>
+                      <div>
+                        <p className="font-display text-xl text-foreground">{current.label}</p>
+                        <p className="text-sm font-medium text-muted-foreground">{current.labelEn}</p>
+                      </div>
+                    </div>
+                    <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                      다른 유형 보기
+                    </span>
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{current.desc}</p>
                 </button>
-              )
-            })}
-          </div>
+              ) : (
+                <div
+                  role="tablist"
+                  aria-label="수강 유형 선택"
+                  className="grid gap-3"
+                >
+                  {audiences.map((a) => {
+                    const active = a.id === selected
+                    return (
+                      <button
+                        key={a.id}
+                        type="button"
+                        role="tab"
+                        id={`tab-${a.id}`}
+                        aria-selected={active}
+                        aria-controls="audience-panel"
+                        onClick={() => handleSelect(a.id)}
+                        className={`flex items-start rounded-[1.5rem] border-2 p-4 text-left transition-all ${active
+                          ? 'border-primary bg-card shadow-md'
+                          : 'border-border bg-card/70 hover:border-primary/40'
+                          }`}
+                      >
+                        <span
+                          className={`flex size-11 items-center justify-center rounded-2xl text-xl ${active ? 'bg-primary/15' : 'bg-secondary'}`}
+                          aria-hidden="true"
+                        >
+                          {a.emoji}
+                        </span>
+                        <span className="ml-3">
+                          <span className="block font-display text-lg text-foreground">{a.label}</span>
+                          <span className="mt-1 block text-sm text-muted-foreground">{a.desc}</span>
+                        </span>
+                      </button>
+                    )
+                  })}
+                </div>
+              )}
+            </div>
+          ) : (
+            <div
+              role="tablist"
+              aria-label="수강 유형 선택"
+              className="mt-10 grid gap-4 sm:grid-cols-3"
+            >
+              {audiences.map((a) => {
+                const active = a.id === selected
+                return (
+                  <button
+                    key={a.id}
+                    type="button"
+                    role="tab"
+                    id={`tab-${a.id}`}
+                    aria-selected={active}
+                    aria-controls="audience-panel"
+                    onClick={() => handleSelect(a.id)}
+                    className={`group flex flex-col items-start rounded-3xl border-2 p-6 text-left transition-all ${active
+                      ? 'border-primary bg-card shadow-lg -translate-y-1'
+                      : 'border-border bg-card/60 hover:border-primary/40 hover:bg-card hover:-translate-y-0.5'
+                      }`}
+                  >
+                    <span
+                      className={`flex size-12 items-center justify-center rounded-2xl text-2xl transition-colors ${active ? 'bg-primary/15' : 'bg-secondary'
+                        }`}
+                      aria-hidden="true"
+                    >
+                      {a.emoji}
+                    </span>
+                    <span className="mt-4 flex items-baseline gap-2">
+                      <span className="font-display text-xl text-foreground">{a.label}</span>
+                      <span className="text-xs font-medium text-muted-foreground">{a.labelEn}</span>
+                    </span>
+                    <span className="mt-2 text-sm leading-relaxed text-muted-foreground">{a.desc}</span>
+                  </button>
+                )
+              })}
+            </div>
+          )}
         </div>
       </section>
 
