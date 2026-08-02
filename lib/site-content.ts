@@ -19,13 +19,16 @@ export const nav = [
 ]
 
 export const hero = {
-  badge: '일본 현지 14년 · 국내 6년간 1:1전문 맞춤수업',
+  badge: '일본 현지 11년 · 국내 6년간 1:1전문 맞춤수업',
   title: '새달일본어와 함께\n유창한 일본어,\n지금 시작하세요',
   subtitle:
     '한국인이 어려워하는 부분을 정확히 아는 강사가, Zoom으로 친구처럼 편하게 가르칩니다.',
-  ctaPrimary: '무료 체험 20분 신청',
-  ctaSecondary: '커리큘럼 살펴보기',
-}
+  ctaPrimary: '무료 체험\n20분 신청',
+  ctaSecondary: '커리큘럼\n살펴보기',
+  reviewText: '숨고 후기\n보러가기',
+  reviewUrl:
+    'https://soomgo.com/profile/users/4523367?from=%ED%86%B5%ED%95%A9%EA%B2%80%EC%83%89%EA%B2%B0%EA%B3%BC&prev=searchPro',
+};
 
 // 타깃(수강 유형) — 아래 스토리/커리큘럼이 이 선택에 따라 바뀝니다.
 export type AudienceId = 'beginner' | 'business' | 'hobby'
@@ -37,28 +40,28 @@ export const audiences: {
   labelEn: string
   desc: string
 }[] = [
-  {
-    id: 'beginner',
-    emoji: '🌱',
-    label: '왕초보',
-    labelEn: 'Beginner',
-    desc: '히라가나부터 차근차근, 처음이라 더 편안하게',
-  },
-  {
-    id: 'business',
-    emoji: '💼',
-    label: '회사원 · 비즈니스',
-    labelEn: 'Business',
-    desc: '메일·회의·출장에서 바로 쓰는 실전 일본어',
-  },
-  {
-    id: 'hobby',
-    emoji: '🎨',
-    label: '취미',
-    labelEn: 'Hobby',
-    desc: '드라마·여행·덕질, 좋아하는 걸 원어로',
-  },
-]
+    {
+      id: 'beginner',
+      emoji: '🌱',
+      label: '왕초보',
+      labelEn: 'Beginner',
+      desc: '히라가나부터 차근차근, 처음이라 더 편안하게',
+    },
+    {
+      id: 'business',
+      emoji: '💼',
+      label: '회사원 · 비즈니스',
+      labelEn: 'Business',
+      desc: '메일·회의·출장에서 바로 쓰는 실전 일본어',
+    },
+    {
+      id: 'hobby',
+      emoji: '🎨',
+      label: '취미',
+      labelEn: 'Hobby',
+      desc: '드라마·여행·덕질, 좋아하는 걸 원어로',
+    },
+  ]
 
 export const instructor = {
   name: '권영지',
@@ -66,7 +69,7 @@ export const instructor = {
   role: '새달일본어 강사',
   photo: '/images/instructor-youngji.jpg',
   headline:
-    '일본 현지 14년 거주, 6년간의 1:1전문 맞춤수업. 한국인이 어려워하는 부분을 정확히 알고, 친구처럼 편하게 가르칩니다.',
+    '일본 현지 11년 거주, 6년간의 1:1전문 맞춤수업. 한국인이 어려워하는 부분을 정확히 알고, 친구처럼 편하게 가르칩니다.',
   points: [
     '한번 익히면 평생 써먹는 언어 습관 들이기',
     '왕초보부터 비즈니스까지 6년간 70명 이상 지도',
@@ -76,8 +79,8 @@ export const instructor = {
 }
 
 export const stats: { value: string; label: string }[] = [
-  { value: '92%', label: '재수강률' },
-  { value: '70+', label: '1:1수업 누적 수강생' },
+  { value: '98%', label: '재수강률' },
+  { value: '10,000+', label: '1:1수업 누적 강의횟수' },
   { value: '5/5', label: '수강생 만족도' },
 ]
 
@@ -204,56 +207,56 @@ export const classMaterials: {
   description: string
   image: string
 }[] = [
-  {
-    id: 'sticker-1',
-    title: '카톡 이모티콘 설명',
-    lesson: '기초 어휘 및 이모지 표현',
-    description: '본인이 자주 사용하는 이모지와 스티커를 정리해 발표한 자료입니다.',
-    image: '/class/imoji.png',
-  },
-  {
-    id: 'pokemon-1',
-    title: '포켓몬 캐릭터 학습',
-    lesson: '좋아하는 분야 설명 해보기',
-    description: '좋아하는 포켓몬 캐릭터의 별칭 유래를 일본어로 설명한 자료입니다.',
-    image: '/class/Metamong.png',
-  },
-  {
-    id: 'basketball-1',
-    title: '농구 용어 및 전술 분석',
-    lesson: '스포츠 일본어 & 전문 용어',
-    description: '농구 경기의 규칙을 일본어로 설명한 자료입니다.',
-    image: '/class/rule.png',
-  },
-  {
-    id: 'highlight-1',
-    title: '여행지에서 먹은 음식',
-    lesson: '음식의 맛과 재료 표현해 보기',
-    description: '여행지에서 먹은 가장 맛있었던 음식을 소개한 자료입니다.',
-    image: '/class/sandwich.png',
-  },
-  {
-    id: 'gesture-1',
-    title: '자기 성찰 발표',
-    lesson: '고치고 싶은 습관과 개선 방법 말해보기',
-    description: '자신의 습관을 돌아보고, 고치고 싶은 습관과 개선 방법을 일본어로 발표한 자료입니다.',
-    image: '/class/description.png',
-  },
-  {
-    id: 'festival-1',
-    title: '한 주간 뉴스 요약 발표',
-    lesson: '뉴스 표현 및 시사 일본어 발표해 보기',
-    description: '한 주간 뉴스를 요약하고, 뉴스 표현 및 시사 일본어를 발표한 자료입니다.',
-    image: '/class/bitcoin.png',
-  },
-  {
-    id: 'radiation-1',
-    title: '난해한 주제 일본어로 발표해 보기',
-    lesson: '프레젠테이션 스킬 & 창의적 표현',
-    description: '슈뢰딩거의 고양이, 양자역학 등 난해한 주제를 일본어로 발표한 자료입니다.',
-    image: '/class/cat.png',
-  },
-]
+    {
+      id: 'sticker-1',
+      title: '카톡 이모티콘 설명',
+      lesson: '기초 어휘 및 이모지 표현',
+      description: '본인이 자주 사용하는 이모지와 스티커를 정리해 발표한 자료입니다.',
+      image: '/class/imoji.png',
+    },
+    {
+      id: 'pokemon-1',
+      title: '포켓몬 캐릭터 학습',
+      lesson: '좋아하는 분야 설명 해보기',
+      description: '좋아하는 포켓몬 캐릭터의 별칭 유래를 일본어로 설명한 자료입니다.',
+      image: '/class/Metamong.png',
+    },
+    {
+      id: 'basketball-1',
+      title: '농구 용어 및 전술 분석',
+      lesson: '스포츠 일본어 & 전문 용어',
+      description: '농구 경기의 규칙을 일본어로 설명한 자료입니다.',
+      image: '/class/rule.png',
+    },
+    {
+      id: 'highlight-1',
+      title: '여행지에서 먹은 음식',
+      lesson: '음식의 맛과 재료 표현해 보기',
+      description: '여행지에서 먹은 가장 맛있었던 음식을 소개한 자료입니다.',
+      image: '/class/sandwich.png',
+    },
+    {
+      id: 'gesture-1',
+      title: '자기 성찰 발표',
+      lesson: '고치고 싶은 습관과 개선 방법 말해보기',
+      description: '자신의 습관을 돌아보고, 고치고 싶은 습관과 개선 방법을 일본어로 발표한 자료입니다.',
+      image: '/class/description.png',
+    },
+    {
+      id: 'festival-1',
+      title: '한 주간 뉴스 요약 발표',
+      lesson: '뉴스 표현 및 시사 일본어 발표해 보기',
+      description: '한 주간 뉴스를 요약하고, 뉴스 표현 및 시사 일본어를 발표한 자료입니다.',
+      image: '/class/bitcoin.png',
+    },
+    {
+      id: 'radiation-1',
+      title: '난해한 주제 일본어로 발표해 보기',
+      lesson: '프레젠테이션 스킬 & 창의적 표현',
+      description: '슈뢰딩거의 고양이, 양자역학 등 난해한 주제를 일본어로 발표한 자료입니다.',
+      image: '/class/cat.png',
+    },
+  ]
 
 export const classPreview = {
   title: '실제 수업자료 미리보기',
@@ -274,32 +277,38 @@ export const classPreview = {
     {
       id: 'class-3',
       number: '03',
-      title: '프리토킹(친구 소개)',
+      title: '기초 어휘로 일과 말해보기',
       image: '/class-text/class 3.png',
     },
     {
       id: 'class-4',
       number: '04',
-      title: '간단한 유튜브 듣기&표현 익히기',
+      title: '프리토킹(친구 소개)',
       image: '/class-text/class 4.png',
     },
     {
       id: 'class-5',
       number: '05',
-      title: '중상급 토론(일본의 요양산업)',
+      title: '간단한 유튜브 듣기&표현 익히기',
       image: '/class-text/class 5.png',
     },
     {
       id: 'class-6',
       number: '06',
-      title: '사회 이슈 및 뉴스 독해',
+      title: '중상급 토론(일본의 요양산업)',
       image: '/class-text/class 6.png',
     },
     {
       id: 'class-7',
       number: '07',
-      title: '상급 토론(호봉제 vs 성과주의)',
+      title: '사회 이슈 및 뉴스 독해',
       image: '/class-text/class 7.png',
+    },
+    {
+      id: 'class-8',
+      number: '08',
+      title: '상급 토론(호봉제 vs 성과주의)',
+      image: '/class-text/class 8.png',
     },
   ],
 }
@@ -327,7 +336,7 @@ export const steps: { title: string; desc: string }[] = [
 
 export const trial = {
   title: '부담 없이 20분, 안 맞으면 그만',
-  subtitle:[
+  subtitle: [
     '레벨 진단과 학습 상담이 포함된 무료 체험 수업입니다.',
     '카메라를 켜지 않아도 괜찮아요.'],
   timeSlots: ['평일 오전', '평일 오후', '평일 저녁', '주말 오전', '주말 오후'],
