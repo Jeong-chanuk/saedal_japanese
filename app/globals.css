@@ -45,6 +45,7 @@
   --radius-4xl: calc(var(--radius) * 2.6);
   --font-sans: var(--font-noto-kr), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-jua), var(--font-noto-kr), ui-sans-serif, sans-serif;
+  --font-jp: var(--font-noto-jp), "Yu Gothic", "Meiryo", "Hiragino Sans", var(--font-noto-kr), ui-sans-serif, sans-serif;
 }
 
 :root {

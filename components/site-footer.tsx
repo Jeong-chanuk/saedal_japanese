@@ -1,9 +1,10 @@
+import Link from 'next/link'
 import { Logo } from '@/components/logo'
 import { brand, footerNav } from '@/lib/site-content'
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-card">
+    <footer className="border-t border-border bg-card print:hidden">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-12 sm:px-6 md:flex-row md:items-center md:justify-between">
         <div className="space-y-3">
           <Logo />
@@ -16,12 +17,12 @@ export function SiteFooter() {
           <ul className="flex flex-wrap gap-x-6 gap-y-3">
             {footerNav.map((item) => (
               <li key={item.label}>
-                <a
+                <Link
                   href={item.href}
                   className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

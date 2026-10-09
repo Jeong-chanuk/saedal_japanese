@@ -1,12 +1,19 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Jua, Noto_Sans_KR } from 'next/font/google'
+import { Jua, Noto_Sans_JP, Noto_Sans_KR } from 'next/font/google'
 import './globals.css'
 
 const jua = Jua({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-jua',
+  display: 'swap',
+})
+
+const notoSansJp = Noto_Sans_JP({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-noto-jp',
   display: 'swap',
 })
 
@@ -36,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ko" className={`bg-background ${jua.variable} ${notoSansKr.variable}`}>
+    <html lang="ko" className={`bg-background ${jua.variable} ${notoSansKr.variable} ${notoSansJp.variable}`}>
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

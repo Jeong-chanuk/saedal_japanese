@@ -11,11 +11,12 @@ export const brand = {
 }
 
 export const nav = [
-  { label: '소개', href: '#instructor' },
-  { label: '후기', href: '#stories' },
-  { label: '커리큘럼', href: '#curriculum' },
-  { label: '수강안내', href: '#how' },
-  { label: 'FAQ', href: '#faq' },
+  { label: '소개', href: '/#instructor' },
+  { label: '후기', href: '/#stories' },
+  { label: '커리큘럼', href: '/#curriculum' },
+  { label: '수강안내', href: '/#how' },
+  { label: 'FAQ', href: '/#faq' },
+  { label: '단어장', href: '/vocabulary' },
 ]
 
 export const hero = {
@@ -381,9 +382,10 @@ export const faqs: { q: string; a: string }[] = [
 ]
 
 export const footerNav = [
-  { label: '소개', href: '#instructor' },
-  { label: '후기', href: '#stories' },
-  { label: '커리큘럼', href: '#curriculum' },
+  { label: '소개', href: '/#instructor' },
+  { label: '후기', href: '/#stories' },
+  { label: '커리큘럼', href: '/#curriculum' },
+  { label: '단어장', href: '/vocabulary' },
   { label: '개인정보처리방침', href: '#' },
-  { label: '문의', href: '#trial' },
+  { label: '문의', href: '/#trial' },
 ]
