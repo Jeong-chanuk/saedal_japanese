@@ -327,6 +327,15 @@ export const learningReport = {
   ],
 }
 
+export const studentReport = {
+  badge: '학생 평가 자료',
+  title: '학생 성과 리포트',
+  subtitle:
+    '열심히 하는데 실력이 늘고 있는지 모르겠다면?\n새달일본어는 초급 2개월, 중상급 3개월마다 성장 리포트로 내 실력을 짚어드려요. 잘하는 점과 다음 과제까지 한눈에 확인하세요.',
+  image: '/class/report.png',
+  imageAlt: '새달일본어 학생 학습 성과 리포트 예시',
+}
+
 export const steps: { title: string; desc: string }[] = [
   { title: '신청하기', desc: '무료 체험 폼을 남기면 하루 안에 연락드려요.' },
   { title: '레벨 진단', desc: 'Zoom으로 현재 실력과 목표를 함께 점검합니다.' },

@@ -6,6 +6,7 @@ import { AudienceExperience } from '@/components/audience-experience'
 import { HowItWorks } from '@/components/how-it-works'
 import { ClassPreview } from '@/components/class-preview'
 import { ClassMaterials } from '@/components/class-materials'
+import { StudentReport } from '@/components/student-report'
 import { TrialSection } from '@/components/trial-section'
 import { FaqSection } from '@/components/faq-section'
 import { SiteFooter } from '@/components/site-footer'
@@ -22,6 +23,7 @@ export default function Page() {
         <HowItWorks />
         <ClassPreview />
         <ClassMaterials />
+        <StudentReport />
         <TrialSection />
         <FaqSection />
       </main>
